@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		23E75DCD65EA280D21FCDF79 /* Pods_SuperCoolTipCalculatorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3530C5BDDB26696D79C9BA8 /* Pods_SuperCoolTipCalculatorTests.framework */; };
+		AEB08F7E03FC873743068F20 /* Pods_SuperCoolTipCalculatorUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69CE28BBDE7879ED31A52964 /* Pods_SuperCoolTipCalculatorUITests.framework */; };
+		E0823745E71DC5A4AC914CEE /* Pods_SuperCoolTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020D4826C633F67FECBA3485 /* Pods_SuperCoolTipCalculator.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		F223E2091E73594300292362 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F223E2081E73594300292362 /* AFNetworking.framework */; };
+		F224A58C1E85ACBE00873128 /* YelpReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */; };
+		F25A55A31E6E2FEC004F3574 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A55A21E6E2FEC004F3574 /* YelpClient.swift */; };
+		F2605BD51E82FDDF007F068C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2605BD41E82FDDF007F068C /* Business.swift */; };
 		F2AB95FD1E447F93002276E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB95FC1E447F93002276E7 /* AppDelegate.swift */; };
 		F2AB95FF1E447F93002276E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB95FE1E447F93002276E7 /* ViewController.swift */; };
 		F2AB96021E447F93002276E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AB96001E447F93002276E7 /* Main.storyboard */; };
@@ -14,6 +21,8 @@
 		F2AB96071E447F93002276E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F2AB96051E447F93002276E7 /* LaunchScreen.storyboard */; };
 		F2AB96121E447F93002276E7 /* SuperCoolTipCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB96111E447F93002276E7 /* SuperCoolTipCalculatorTests.swift */; };
 		F2AB961D1E447F93002276E7 /* SuperCoolTipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB961C1E447F93002276E7 /* SuperCoolTipCalculatorUITests.swift */; };
+		F2AB962B1E455126002276E7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB962A1E455126002276E7 /* SettingsViewController.swift */; };
+		F2C0F1891E73875300B5F4DF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2C0F1881E73875300B5F4DF /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +43,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		020D4826C633F67FECBA3485 /* Pods_SuperCoolTipCalculator.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCoolTipCalculator.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10D9B245D7E433D9FA8D117B /* Pods-SuperCoolTipCalculatorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculatorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculatorTests/Pods-SuperCoolTipCalculatorTests.release.xcconfig"; sourceTree = "<group>"; };
+		57FCE9BF2A8BA00A20D422BA /* Pods-SuperCoolTipCalculatorUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculatorUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculatorUITests/Pods-SuperCoolTipCalculatorUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		63D3778710D51B64AD175B64 /* Pods-SuperCoolTipCalculatorUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculatorUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculatorUITests/Pods-SuperCoolTipCalculatorUITests.release.xcconfig"; sourceTree = "<group>"; };
+		69CE28BBDE7879ED31A52964 /* Pods_SuperCoolTipCalculatorUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCoolTipCalculatorUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3530C5BDDB26696D79C9BA8 /* Pods_SuperCoolTipCalculatorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCoolTipCalculatorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A59DD6C151F5D715BFDC8D79 /* Pods-SuperCoolTipCalculator.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculator.release.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculator/Pods-SuperCoolTipCalculator.release.xcconfig"; sourceTree = "<group>"; };
+		A868E8CD6EE78578AD67E404 /* Pods-SuperCoolTipCalculatorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculatorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculatorTests/Pods-SuperCoolTipCalculatorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E28A685255237DE3E8539724 /* Pods-SuperCoolTipCalculator.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCoolTipCalculator.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SuperCoolTipCalculator/Pods-SuperCoolTipCalculator.debug.xcconfig"; sourceTree = "<group>"; };
+		F223E2081E73594300292362 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
+		F223E20D1E736FEE00292362 /* AFOAuth1Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFOAuth1Client.framework; path = "../../Library/Developer/Xcode/DerivedData/SuperCoolTipCalculator-efxprlazuumxvwbzwokgzqzqfdfw/Build/Products/Debug-iphonesimulator/AFOAuth1Client/AFOAuth1Client.framework"; sourceTree = "<group>"; };
+		F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpReviewViewController.swift; sourceTree = "<group>"; };
+		F25A55A21E6E2FEC004F3574 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		F2605BD41E82FDDF007F068C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		F2AB95F91E447F93002276E7 /* SuperCoolTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCoolTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AB95FC1E447F93002276E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F2AB95FE1E447F93002276E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +70,30 @@
 		F2AB96181E447F93002276E7 /* SuperCoolTipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCoolTipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2AB961C1E447F93002276E7 /* SuperCoolTipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCoolTipCalculatorUITests.swift; sourceTree = "<group>"; };
 		F2AB961E1E447F93002276E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2AB962A1E455126002276E7 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		F2C0F13F1E73751D00B5F4DF /* BDBOAuth1RequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1RequestOperationManager.h; sourceTree = "<group>"; };
+		F2C0F1401E73751D00B5F4DF /* BDBOAuth1RequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1RequestOperationManager.m; sourceTree = "<group>"; };
+		F2C0F1411E73751D00B5F4DF /* BDBOAuth1RequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1RequestSerializer.h; sourceTree = "<group>"; };
+		F2C0F1421E73751D00B5F4DF /* BDBOAuth1RequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1RequestSerializer.m; sourceTree = "<group>"; };
+		F2C0F1431E73751D00B5F4DF /* BDBOAuth1SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1SessionManager.h; sourceTree = "<group>"; };
+		F2C0F1441E73751D00B5F4DF /* BDBOAuth1SessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1SessionManager.m; sourceTree = "<group>"; };
+		F2C0F1461E73751D00B5F4DF /* NSDictionary+BDBOAuth1Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDBOAuth1Manager.h"; sourceTree = "<group>"; };
+		F2C0F1471E73751D00B5F4DF /* NSDictionary+BDBOAuth1Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDBOAuth1Manager.m"; sourceTree = "<group>"; };
+		F2C0F1481E73751D00B5F4DF /* NSString+BDBOAuth1Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BDBOAuth1Manager.h"; sourceTree = "<group>"; };
+		F2C0F1491E73751D00B5F4DF /* NSString+BDBOAuth1Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDBOAuth1Manager.m"; sourceTree = "<group>"; };
+		F2C0F14A1E73751D00B5F4DF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F2C0F14B1E73751D00B5F4DF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F2C0F17D1E7375CE00B5F4DF /* BDBOAuth1RequestOperationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1RequestOperationManager.h; sourceTree = "<group>"; };
+		F2C0F17E1E7375CE00B5F4DF /* BDBOAuth1RequestOperationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1RequestOperationManager.m; sourceTree = "<group>"; };
+		F2C0F17F1E7375CE00B5F4DF /* BDBOAuth1RequestSerializer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1RequestSerializer.h; sourceTree = "<group>"; };
+		F2C0F1801E7375CE00B5F4DF /* BDBOAuth1RequestSerializer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1RequestSerializer.m; sourceTree = "<group>"; };
+		F2C0F1811E7375CE00B5F4DF /* BDBOAuth1SessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BDBOAuth1SessionManager.h; sourceTree = "<group>"; };
+		F2C0F1821E7375CE00B5F4DF /* BDBOAuth1SessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BDBOAuth1SessionManager.m; sourceTree = "<group>"; };
+		F2C0F1841E7375CE00B5F4DF /* NSDictionary+BDBOAuth1Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+BDBOAuth1Manager.h"; sourceTree = "<group>"; };
+		F2C0F1851E7375CE00B5F4DF /* NSDictionary+BDBOAuth1Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+BDBOAuth1Manager.m"; sourceTree = "<group>"; };
+		F2C0F1861E7375CE00B5F4DF /* NSString+BDBOAuth1Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+BDBOAuth1Manager.h"; sourceTree = "<group>"; };
+		F2C0F1871E7375CE00B5F4DF /* NSString+BDBOAuth1Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+BDBOAuth1Manager.m"; sourceTree = "<group>"; };
+		F2C0F1881E73875300B5F4DF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2C0F1891E73875300B5F4DF /* CoreLocation.framework in Frameworks */,
+				F223E2091E73594300292362 /* AFNetworking.framework in Frameworks */,
+				E0823745E71DC5A4AC914CEE /* Pods_SuperCoolTipCalculator.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23E75DCD65EA280D21FCDF79 /* Pods_SuperCoolTipCalculatorTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +119,41 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEB08F7E03FC873743068F20 /* Pods_SuperCoolTipCalculatorUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		391EBC89CC3DCAF05C58BB6F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E28A685255237DE3E8539724 /* Pods-SuperCoolTipCalculator.debug.xcconfig */,
+				A59DD6C151F5D715BFDC8D79 /* Pods-SuperCoolTipCalculator.release.xcconfig */,
+				A868E8CD6EE78578AD67E404 /* Pods-SuperCoolTipCalculatorTests.debug.xcconfig */,
+				10D9B245D7E433D9FA8D117B /* Pods-SuperCoolTipCalculatorTests.release.xcconfig */,
+				57FCE9BF2A8BA00A20D422BA /* Pods-SuperCoolTipCalculatorUITests.debug.xcconfig */,
+				63D3778710D51B64AD175B64 /* Pods-SuperCoolTipCalculatorUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E81EF53162D630F97C6B8488 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F1881E73875300B5F4DF /* CoreLocation.framework */,
+				F2C0F17C1E7375CE00B5F4DF /* BDBOAuth1Manager */,
+				F2C0F13D1E73751D00B5F4DF /* BDBOAuth1Manager */,
+				F223E20D1E736FEE00292362 /* AFOAuth1Client.framework */,
+				F223E2081E73594300292362 /* AFNetworking.framework */,
+				020D4826C633F67FECBA3485 /* Pods_SuperCoolTipCalculator.framework */,
+				A3530C5BDDB26696D79C9BA8 /* Pods_SuperCoolTipCalculatorTests.framework */,
+				69CE28BBDE7879ED31A52964 /* Pods_SuperCoolTipCalculatorUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F2AB95F01E447F93002276E7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +161,8 @@
 				F2AB96101E447F93002276E7 /* SuperCoolTipCalculatorTests */,
 				F2AB961B1E447F93002276E7 /* SuperCoolTipCalculatorUITests */,
 				F2AB95FA1E447F93002276E7 /* Products */,
+				391EBC89CC3DCAF05C58BB6F /* Pods */,
+				E81EF53162D630F97C6B8488 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,8 +180,12 @@
 			isa = PBXGroup;
 			children = (
 				F2AB95FC1E447F93002276E7 /* AppDelegate.swift */,
+				F2605BD41E82FDDF007F068C /* Business.swift */,
 				F2AB95FE1E447F93002276E7 /* ViewController.swift */,
+				F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */,
 				F2AB96001E447F93002276E7 /* Main.storyboard */,
+				F25A55A21E6E2FEC004F3574 /* YelpClient.swift */,
+				F2AB962A1E455126002276E7 /* SettingsViewController.swift */,
 				F2AB96031E447F93002276E7 /* Assets.xcassets */,
 				F2AB96051E447F93002276E7 /* LaunchScreen.storyboard */,
 				F2AB96081E447F93002276E7 /* Info.plist */,
@@ -125,6 +211,68 @@
 			path = SuperCoolTipCalculatorUITests;
 			sourceTree = "<group>";
 		};
+		F2C0F13D1E73751D00B5F4DF /* BDBOAuth1Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F13E1E73751D00B5F4DF /* BDBOAuth1Manager */,
+				F2C0F14A1E73751D00B5F4DF /* LICENSE */,
+				F2C0F14B1E73751D00B5F4DF /* README.md */,
+			);
+			name = BDBOAuth1Manager;
+			path = Pods/BDBOAuth1Manager;
+			sourceTree = "<group>";
+		};
+		F2C0F13E1E73751D00B5F4DF /* BDBOAuth1Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F13F1E73751D00B5F4DF /* BDBOAuth1RequestOperationManager.h */,
+				F2C0F1401E73751D00B5F4DF /* BDBOAuth1RequestOperationManager.m */,
+				F2C0F1411E73751D00B5F4DF /* BDBOAuth1RequestSerializer.h */,
+				F2C0F1421E73751D00B5F4DF /* BDBOAuth1RequestSerializer.m */,
+				F2C0F1431E73751D00B5F4DF /* BDBOAuth1SessionManager.h */,
+				F2C0F1441E73751D00B5F4DF /* BDBOAuth1SessionManager.m */,
+				F2C0F1451E73751D00B5F4DF /* Categories */,
+			);
+			path = BDBOAuth1Manager;
+			sourceTree = "<group>";
+		};
+		F2C0F1451E73751D00B5F4DF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F1461E73751D00B5F4DF /* NSDictionary+BDBOAuth1Manager.h */,
+				F2C0F1471E73751D00B5F4DF /* NSDictionary+BDBOAuth1Manager.m */,
+				F2C0F1481E73751D00B5F4DF /* NSString+BDBOAuth1Manager.h */,
+				F2C0F1491E73751D00B5F4DF /* NSString+BDBOAuth1Manager.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		F2C0F17C1E7375CE00B5F4DF /* BDBOAuth1Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F17D1E7375CE00B5F4DF /* BDBOAuth1RequestOperationManager.h */,
+				F2C0F17E1E7375CE00B5F4DF /* BDBOAuth1RequestOperationManager.m */,
+				F2C0F17F1E7375CE00B5F4DF /* BDBOAuth1RequestSerializer.h */,
+				F2C0F1801E7375CE00B5F4DF /* BDBOAuth1RequestSerializer.m */,
+				F2C0F1811E7375CE00B5F4DF /* BDBOAuth1SessionManager.h */,
+				F2C0F1821E7375CE00B5F4DF /* BDBOAuth1SessionManager.m */,
+				F2C0F1831E7375CE00B5F4DF /* Categories */,
+			);
+			name = BDBOAuth1Manager;
+			path = Pods/BDBOAuth1Manager/BDBOAuth1Manager;
+			sourceTree = "<group>";
+		};
+		F2C0F1831E7375CE00B5F4DF /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				F2C0F1841E7375CE00B5F4DF /* NSDictionary+BDBOAuth1Manager.h */,
+				F2C0F1851E7375CE00B5F4DF /* NSDictionary+BDBOAuth1Manager.m */,
+				F2C0F1861E7375CE00B5F4DF /* NSString+BDBOAuth1Manager.h */,
+				F2C0F1871E7375CE00B5F4DF /* NSString+BDBOAuth1Manager.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +280,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2AB96211E447F94002276E7 /* Build configuration list for PBXNativeTarget "SuperCoolTipCalculator" */;
 			buildPhases = (
+				82DCC8E90670A7859E5C26E4 /* [CP] Check Pods Manifest.lock */,
 				F2AB95F51E447F93002276E7 /* Sources */,
 				F2AB95F61E447F93002276E7 /* Frameworks */,
 				F2AB95F71E447F93002276E7 /* Resources */,
+				EE333953509F3ADA28CFB0FC /* [CP] Embed Pods Frameworks */,
+				03BC6533BAB82854DF86D8BA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +300,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2AB96241E447F94002276E7 /* Build configuration list for PBXNativeTarget "SuperCoolTipCalculatorTests" */;
 			buildPhases = (
+				C196385DFB1BDDACFD3F003F /* [CP] Check Pods Manifest.lock */,
 				F2AB96091E447F93002276E7 /* Sources */,
 				F2AB960A1E447F93002276E7 /* Frameworks */,
 				F2AB960B1E447F93002276E7 /* Resources */,
+				50D87444A992573224F273D0 /* [CP] Embed Pods Frameworks */,
+				9B0E452F1A71365F26F01FD8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +321,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F2AB96271E447F94002276E7 /* Build configuration list for PBXNativeTarget "SuperCoolTipCalculatorUITests" */;
 			buildPhases = (
+				40A6D5D59511E7FCEF6F7492 /* [CP] Check Pods Manifest.lock */,
 				F2AB96141E447F93002276E7 /* Sources */,
 				F2AB96151E447F93002276E7 /* Frameworks */,
 				F2AB96161E447F93002276E7 /* Resources */,
+				0DC26BD77E3E653C3495ADD7 /* [CP] Copy Pods Resources */,
+				03AA59BAF22E7EED67D2D1B9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -194,17 +351,20 @@
 					F2AB95F81E447F93002276E7 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 875WVS57Q6;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					F2AB960C1E447F93002276E7 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 875WVS57Q6;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F2AB95F81E447F93002276E7;
 					};
 					F2AB96171E447F93002276E7 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 875WVS57Q6;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F2AB95F81E447F93002276E7;
 					};
@@ -257,13 +417,155 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		03AA59BAF22E7EED67D2D1B9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculatorUITests/Pods-SuperCoolTipCalculatorUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		03BC6533BAB82854DF86D8BA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculator/Pods-SuperCoolTipCalculator-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0DC26BD77E3E653C3495ADD7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculatorUITests/Pods-SuperCoolTipCalculatorUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40A6D5D59511E7FCEF6F7492 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		50D87444A992573224F273D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculatorTests/Pods-SuperCoolTipCalculatorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82DCC8E90670A7859E5C26E4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9B0E452F1A71365F26F01FD8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculatorTests/Pods-SuperCoolTipCalculatorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C196385DFB1BDDACFD3F003F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EE333953509F3ADA28CFB0FC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SuperCoolTipCalculator/Pods-SuperCoolTipCalculator-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F2AB95F51E447F93002276E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25A55A31E6E2FEC004F3574 /* YelpClient.swift in Sources */,
 				F2AB95FF1E447F93002276E7 /* ViewController.swift in Sources */,
+				F224A58C1E85ACBE00873128 /* YelpReviewViewController.swift in Sources */,
 				F2AB95FD1E447F93002276E7 /* AppDelegate.swift in Sources */,
+				F2605BD51E82FDDF007F068C /* Business.swift in Sources */,
+				F2AB962B1E455126002276E7 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +666,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0.1;
 			};
 			name = Debug;
 		};
@@ -405,38 +708,52 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0.1;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		F2AB96221E447F94002276E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28A685255237DE3E8539724 /* Pods-SuperCoolTipCalculator.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 875WVS57Q6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				INFOPLIST_FILE = SuperCoolTipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EdenShapiro.SuperCoolTipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
 		F2AB96231E447F94002276E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A59DD6C151F5D715BFDC8D79 /* Pods-SuperCoolTipCalculator.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 875WVS57Q6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/build/Debug-iphoneos/AFNetworking",
+				);
 				INFOPLIST_FILE = SuperCoolTipCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.EdenShapiro.SuperCoolTipCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
 		F2AB96251E447F94002276E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A868E8CD6EE78578AD67E404 /* Pods-SuperCoolTipCalculatorTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -452,6 +769,7 @@
 		};
 		F2AB96261E447F94002276E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10D9B245D7E433D9FA8D117B /* Pods-SuperCoolTipCalculatorTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -467,6 +785,7 @@
 		};
 		F2AB96281E447F94002276E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57FCE9BF2A8BA00A20D422BA /* Pods-SuperCoolTipCalculatorUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 875WVS57Q6;
@@ -481,6 +800,7 @@
 		};
 		F2AB96291E447F94002276E7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63D3778710D51B64AD175B64 /* Pods-SuperCoolTipCalculatorUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = 875WVS57Q6;
@@ -512,6 +832,7 @@
 				F2AB96231E447F94002276E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2AB96241E447F94002276E7 /* Build configuration list for PBXNativeTarget "SuperCoolTipCalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +841,7 @@
 				F2AB96261E447F94002276E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F2AB96271E447F94002276E7 /* Build configuration list for PBXNativeTarget "SuperCoolTipCalculatorUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +850,7 @@
 				F2AB96291E447F94002276E7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
