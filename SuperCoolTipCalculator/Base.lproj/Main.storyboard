@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="dzX-B4-d6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="dzX-B4-d6f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -100,7 +100,6 @@
                                 <state key="normal" title="Leave Yelp review for [restaurant]"/>
                                 <connections>
                                     <action selector="leaveYelpReviewButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lw5-wL-sKL"/>
-                                    <segue destination="rBV-Sj-GNa" kind="push" id="8Nk-F2-rcv"/>
                                 </connections>
                             </button>
                         </subviews>

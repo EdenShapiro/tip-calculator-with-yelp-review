@@ -60,25 +60,25 @@ public func XML(_ xml: String, url: String?, encoding: String.Encoding, option: 
 }
 
 public func XML(_ xml: String, encoding: String.Encoding, option: ParseOption = kDefaultXmlParseOption) -> XMLDocument? {
-    return XML(xml: xml, url: nil, encoding: encoding, option: option)
+    return XML(xml, url: nil, encoding: encoding, option: option)
 }
 
 // NSData
 public func XML(_ xml: Data, url: String?, encoding: String.Encoding, option: ParseOption = kDefaultXmlParseOption) -> XMLDocument? {
     if let xmlStr = String(data: xml, encoding: encoding) {
-        return XML(xml: xmlStr, url: url, encoding: encoding, option: option)
+        return XML(xmlStr, url: url, encoding: encoding, option: option)
     }
     return nil
 }
 
 public func XML(_ xml: Data, encoding: String.Encoding, option: ParseOption = kDefaultXmlParseOption) -> XMLDocument? {
-    return XML(xml: xml, url: nil, encoding: encoding, option: option)
+    return XML(xml, url: nil, encoding: encoding, option: option)
 }
 
 // NSURL
 public func XML(_ url: URL, encoding: String.Encoding, option: ParseOption = kDefaultXmlParseOption) -> XMLDocument? {
     if let data = try? Data(contentsOf: url) {
-        return XML(xml: data, url: url.absoluteString, encoding: encoding, option: option)
+        return XML(data, url: url.absoluteString, encoding: encoding, option: option)
     }
     return nil
 }
@@ -129,25 +129,25 @@ public func HTML(_ html: String, url: String?, encoding: String.Encoding, option
 }
 
 public func HTML(_ html: String, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) -> HTMLDocument? {
-    return HTML(html: html, url: nil, encoding: encoding, option: option)
+    return HTML(html, url: nil, encoding: encoding, option: option)
 }
 
 // NSData
 public func HTML(_ html: Data, url: String?, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) -> HTMLDocument? {
     if let htmlStr = String(data: html, encoding: encoding) {
-        return HTML(html: htmlStr, url: url, encoding: encoding, option: option)
+        return HTML(htmlStr, url: url, encoding: encoding, option: option)
     }
     return nil
 }
 
 public func HTML(_ html: Data, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) -> HTMLDocument? {
-    return HTML(html: html, url: nil, encoding: encoding, option: option)
+    return HTML(html, url: nil, encoding: encoding, option: option)
 }
 
 // NSURL
 public func HTML(_ url: URL, encoding: String.Encoding, option: ParseOption = kDefaultHtmlParseOption) -> HTMLDocument? {
     if let data = try? Data(contentsOf: url) {
-        return HTML(html: data, url: url.absoluteString, encoding: encoding, option: option)
+        return HTML(data, url: url.absoluteString, encoding: encoding, option: option)
     }
     return nil
 }

@@ -33,8 +33,9 @@ class YelpReviewViewController: UIViewController, UIWebViewDelegate, UIGestureRe
         // Set up webview
         webView.delegate = self
         webView.isUserInteractionEnabled = true
+        print(yelpBusinessString)
         let url = URL(string: yelpBusinessString)
-        let request = URLRequest(url: url! as URL)
+        let request = URLRequest(url: url!)
         webView.loadRequest(request as URLRequest)
         webView.scalesPageToFit = true
 //        let longPressRecognizer = UILongPressGestureRecognizer(target: self, action:#selector(GISViewController.handleLongPress(_:)))

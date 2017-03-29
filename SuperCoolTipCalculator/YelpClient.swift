@@ -11,10 +11,7 @@ import AFNetworking
 import BDBOAuth1Manager
 
 //import AFNetworking
-var consumerKey = "xd-t2iYRRdwUrHw2HwipLw"
-var consumerSecret = "px9oATTwDkq5UTmvWzxzavE4itc"
-var token = "M1vAa08Og5l0WOWNYo2sNwUGcx_x3Ige"
-var tokenSecret = "M1R5bDSa3YERnNHCr2tdGSACKrg"
+
 
 enum YelpSortMode: Int {
     case bestMatched = 0, distance, highestRated
@@ -28,7 +25,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
     
     //MARK: Shared Instance
     
-    static let sharedInstance = YelpClient(consumerKey: consumerKey, consumerSecret: consumerSecret, accessToken: token, accessSecret: tokenSecret)
+    static let sharedInstance = YelpClient(consumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret, accessToken: Constants.token, accessSecret: Constants.tokenSecret)
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -37,7 +34,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
     init(consumerKey key: String!, consumerSecret secret: String!, accessToken: String!, accessSecret: String!) {
         self.accessToken = accessToken
         self.accessSecret = accessSecret
-        let baseUrl = URL(string: "https://api.yelp.com/v2/")
+        let baseUrl = URL(string: Constants.yelpAPIBaseURL)
         super.init(baseURL: baseUrl, consumerKey: key, consumerSecret: secret);
         
         let token = BDBOAuth1Credential(token: accessToken, secret: accessSecret, expiration: nil)
@@ -82,7 +79,7 @@ class YelpClient: BDBOAuth1RequestOperationManager {
                             if let response = response as? [String: Any]{
                                 let dictionaries = response["businesses"] as? [NSDictionary]
                                 if dictionaries != nil {
-                                    completion(Business.businesses(array: dictionaries!), nil)
+                                    completion(Business.businesses(dictionaries!), nil)
                                 }
                             }
         },

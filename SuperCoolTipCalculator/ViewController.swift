@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 import CoreLocation
 import Kanna
 import Alamofire
@@ -24,6 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var businesses: [Business]?
     var userLocation: CLLocation?
     var currentBusiness: Business?
+    var yelpBusinessReviewLink: String?
     
 //    func locationManager() -> CLLocationManager {
 //        if locationManager {
@@ -39,6 +41,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.scrapeYelpPage()
 
   
            }
@@ -109,7 +112,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             
             let lat = userLocation.coordinate.latitude
             let long = userLocation.coordinate.longitude
-            Business.searchWithTerm(term: "", userLocation: (lat, long), sort: YelpSortMode.distance, categories: nil, deals: nil, completion: { (businesses: [Business]?, error: Error?) -> Void in
+            Business.searchWithTerm("", userLocation: (lat, long), sort: YelpSortMode.distance, categories: nil, deals: nil, completion: { (businesses: [Business]?, error: Error?) -> Void in
                 
                 self.businesses = businesses
                 if let businesses = businesses {
@@ -122,9 +125,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     //                    let titleString = NSAttributedString(string: "Leave Yelp review for \(self.currentBusiness.name!)" , attributes: [String : Any]?)
                     
                     self.leaveYelpReviewButton.setTitle("Leave Yelp review for \(self.currentBusiness!.name!)", for: .normal)
-                    
+                    //self.scrapeYelpPage()
                 }
             })
+            
             
             
         } else {
@@ -160,33 +164,69 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func leaveYelpReviewButtonClicked(_ sender: Any) {
         
-        let yelpReviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "YelpReviewViewController") as! YelpReviewViewController
 //        yelpReviewViewController.delegate = self
-        yelpReviewViewController.yelpBusinessString = getYelpBusinessReviewLink()
+        let currentBusinessLink = Constants.YelpHost + Constants.YelpBizPath + "/" + self.currentBusiness!.id!
+        print(currentBusinessLink)
+        scrapeYelpPage(requestLink: currentBusinessLink) { () in
+            let yelpReviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "YelpReviewViewController") as! YelpReviewViewController
+            print("THIS LINE GETS EXECUTED NOW")
+            print(self.yelpBusinessReviewLink!)
+            self.yelpBusinessReviewLink!.remove(at: self.yelpBusinessReviewLink!.index(before: self.yelpBusinessReviewLink!.endIndex))
+            self.yelpBusinessReviewLink!.remove(at: self.yelpBusinessReviewLink!.index(before: self.yelpBusinessReviewLink!.endIndex))
+            yelpReviewViewController.yelpBusinessString = self.yelpBusinessReviewLink!
+            self.navigationController?.pushViewController(yelpReviewViewController, animated: true)
+//            self.present(yelpReviewViewController, animated: true, completion: nil)
+        }
         //        GISVC.webView = UIWebView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height))
-        self.present(yelpReviewViewController, animated: true, completion: nil)
+        
         
     
     }
     
-    func getYelpBusinessReviewLink() -> String {
-        
-        return ""
-    }
+//    func getYelpBusinessReviewLink() {
+//        print(scrapeYelpPage())
+//        return scrapeYelpPage()
+//        
+//    }
     
     
-    func scrapeYelpPage(_ businessName: String) -> Void {
-        
-        Alamofire.request("http://nycmetalscene.com").responseString { response in
+//    func scrapeYelpPage(_ businessName: String) -> Void {
+    func scrapeYelpPage(requestLink: String, completion: @escaping () -> Void ) {
+        //var resultString: String
+        Alamofire.request(requestLink).responseString { response in
             print("\(response.result.isSuccess)")
             if let html = response.result.value {
-                self.parseHTML(html: html)
+                self.parseHTML(html) { () in
+                    completion()
+                }
+//                    guard let resultString = result as? String else {return "errrrrrr"}
+//                    return resultString
+                
+                
             }
         }
+//        return "dkfsdkfhjsdfjhsdkfhks"
+        
+//        print(resultString)
+//        return resultString
     }
     
-    func parseHTML(_ html: String) -> Void {
-        // Finish this next
+    func parseHTML(_ html: String, completionHandler: () -> Void) {
+//        if let doc = Kanna.HTML(html, encoding: String.Encoding.utf8) {
+            let regex = try! NSRegularExpression(pattern: "\\/writeareview\\/biz\\/.+\\?return_url.+",
+                                                 options: .caseInsensitive)
+            guard let myMatch = regex.firstMatch(in: html, options: .withoutAnchoringBounds, range: NSRange(location: 0, length: html.characters.count))
+                else {
+                    print("errrr")
+                    return //"problemelemlem"
+                }
+            let tmp = (html as NSString).substring(with: myMatch.range)
+            print("Match: \(tmp)")
+            //completion(tmp)
+//            return tmp
+            self.yelpBusinessReviewLink = Constants.YelpHost + tmp
+            completionHandler()
+
     }
     
 }
