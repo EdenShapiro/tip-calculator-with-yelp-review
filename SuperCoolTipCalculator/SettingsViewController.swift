@@ -48,11 +48,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -62,8 +57,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
-//        let str = pickerData[row]
-//        return NSAttributedString(string: str, attributes: [NSForegroundColorAttributeName:UIColor.white])
         let attributedString = NSAttributedString(string: String(pickerData[row]), attributes: [NSForegroundColorAttributeName : UIColor.lightGray])
         return attributedString
     }
@@ -72,14 +65,7 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         print(pickerData[row])
         print(pickerData[row]/100)
         tipPercentages[pickerView.tag - 1] = Double(pickerData[row])/100.0
-//        tipPercentages = "fsdf"
-//        myLabel.text = pickerData[row]
-//        
-//        let defaults = NSUserDefaults.standardUserDefaults()
         defaults.set(tipPercentages, forKey: "tipPercentages")
-//        defaults.setInteger(123, forKey: "another_key_that_you_choose")
         defaults.synchronize()
     }
-    
-
 }

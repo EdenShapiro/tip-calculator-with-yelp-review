@@ -74,12 +74,9 @@ class Business: NSObject {
         }
         
         reviewCount = dictionary["review_count"] as? NSNumber
-//        if let id = dictionary["id"] as? String{
-//            self.id = id
-//            print(id)
-//        }
+
         id = dictionary["id"] as? String
-        print(id)
+
 
         
     }
@@ -100,6 +97,5 @@ class Business: NSObject {
     class func searchWithTerm(_ term: String, userLocation: (Double, Double)?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, completion: @escaping ([Business]?, Error?) -> Void) -> Void {
         _ = YelpClient.sharedInstance.searchWithTerm(term, userLocation: userLocation, sort: sort, categories: categories, deals: deals, completion: completion)
     }
-//    func searchWithTerm(_ term: String, userLocation: (CLLocationDegrees, CLLocationDegrees)?, sort: YelpSortMode?, categories: [String]?, deals: Bool?, completion: @escaping ([Business]?, Error?) -> Void) -> AFHTTPRequestOperation {
 
 }

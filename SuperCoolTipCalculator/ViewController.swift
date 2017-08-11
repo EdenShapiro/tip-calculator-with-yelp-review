@@ -18,6 +18,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var billField: UITextField!
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var leaveYelpReviewButton: UIButton!
+    @IBOutlet weak var incorrectLocationButton: UIButton!
     let defaults = UserDefaults.standard
     var tipPercentages: [Double]!
     var defaultSegment: Int!
@@ -27,24 +28,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     var currentBusiness: Business?
     var yelpBusinessReviewLink: String?
     
-//    func locationManager() -> CLLocationManager {
-//        if locationManager {
-//            locationManager = CLLocationManager()
-//            locationManager.delegate = self
-//            locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
-//            // We don't want to be notified of small changes in location, preferring to use our
-//            // last cached results, if any.
-//            locationManager.distanceFilter = 50
-//        }
-//        return locationManager
-//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.scrapeYelpPage()
-
-  
-           }
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         if let defaultsArray = defaults.array(forKey: "tipPercentages"){
@@ -75,33 +62,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
 
 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-//        locationManager.requestAlwaysAuthorization()
         locationManager.requestWhenInUseAuthorization()
-        
         
         if CLLocationManager.locationServicesEnabled() {
             locationManager.startUpdatingLocation()
             locationManager.startMonitoringSignificantLocationChanges()
             print("startUpdatingLocation")
-            //locationManager.startUpdatingHeading()
         }
     }
+    
+    // Updated location callback
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0] as CLLocation
         print("didUpdateLocations callllled")
-        // Call stopUpdatingLocation() to stop listening for location updates,
+        // TODO: Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
-        
         // manager.stopUpdatingLocation()
         
         print("user latitude = \(userLocation!.coordinate.latitude)")
@@ -116,29 +95,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 
                 self.businesses = businesses
                 if let businesses = businesses {
-                    //                    for business in businesses {
-                    //                        print(business.name!)
-                    //                        print(business.address!)
-                    //                    }
                     self.currentBusiness = businesses[0]
                     print(self.currentBusiness!.name!)
-                    //                    let titleString = NSAttributedString(string: "Leave Yelp review for \(self.currentBusiness.name!)" , attributes: [String : Any]?)
-                    
-                    self.leaveYelpReviewButton.setTitle("Leave Yelp review for \(self.currentBusiness!.name!)", for: .normal)
-                    //self.scrapeYelpPage()
+                    //  TODO: make button prettier. let titleString = NSAttributedString(string: "Leave Yelp review for \(self.currentBusiness.name!)" , attributes: [String : Any]?)
+                    self.setLeaveYelpReviewButton(business: self.currentBusiness!)
                 }
             })
             
-            
-            
         } else {
-            print("errrrrrreerer")
+            print("Error: userLocation not found.")
         }
-
-        
-//        locationManager.stopUpdatingLocation()
     }
     
+    func setLeaveYelpReviewButton(business: Business){
+        self.leaveYelpReviewButton.setTitle("Leave Yelp review for \(business.name!)", for: .normal)
+        
+    }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error \(error)")
     }
@@ -151,7 +123,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
     // Called when segmentedcontrol value changes
     @IBAction func calculateTip(_ sender: AnyObject) {
-//        let tipPercentages = [0.15, 0.20, 0.25]
         
         let bill = Double(billField.text!) ?? 0
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
@@ -160,37 +131,48 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
         defaults.set(tipControl.selectedSegmentIndex, forKey: "defaultSegment")
+        
+        
+        //TODO: Maybe add animations later? It doesn't seem to add much to the app right now.
+        //        self.firstView.alpha = 0
+        //        self.secondView.alpha = 1
+        //        UIView.animateWithDuration(0.4, animations: {
+        //            // This causes first view to fade in and second view to fade out
+        //            self.firstView.alpha = 1
+        //            self.secondView.alpha = 0
+        //        })
     }
     
     @IBAction func leaveYelpReviewButtonClicked(_ sender: Any) {
         
-//        yelpReviewViewController.delegate = self
         let currentBusinessLink = Constants.YelpHost + Constants.YelpBizPath + "/" + self.currentBusiness!.id!
         print(currentBusinessLink)
         scrapeYelpPage(requestLink: currentBusinessLink) { () in
             let yelpReviewViewController = self.storyboard?.instantiateViewController(withIdentifier: "YelpReviewViewController") as! YelpReviewViewController
-            print("THIS LINE GETS EXECUTED NOW")
             print(self.yelpBusinessReviewLink!)
             self.yelpBusinessReviewLink!.remove(at: self.yelpBusinessReviewLink!.index(before: self.yelpBusinessReviewLink!.endIndex))
             self.yelpBusinessReviewLink!.remove(at: self.yelpBusinessReviewLink!.index(before: self.yelpBusinessReviewLink!.endIndex))
             yelpReviewViewController.yelpBusinessString = self.yelpBusinessReviewLink!
             self.navigationController?.pushViewController(yelpReviewViewController, animated: true)
-//            self.present(yelpReviewViewController, animated: true, completion: nil)
         }
-        //        GISVC.webView = UIWebView(frame: CGRect(x: self.view.frame.origin.x, y: self.view.frame.origin.y, width: self.view.frame.width, height: self.view.frame.height))
-        
-        
-    
     }
     
-//    func getYelpBusinessReviewLink() {
-//        print(scrapeYelpPage())
-//        return scrapeYelpPage()
-//        
-//    }
+    @IBAction func incorrectLocationButtonClicked(_ sender: Any) {
+        let otherLocationsVC = self.storyboard?.instantiateViewController(withIdentifier: "OtherLocationsViewController") as! OtherLocationsViewController
+        otherLocationsVC.parentVC = self
+        if let otherLocs = self.businesses {
+            otherLocationsVC.otherBusinessesArray = otherLocs
+            print("Here is the list of other locations: \(otherLocs)")
+        } else {
+            otherLocationsVC.otherBusinessesArray = [Business]()
+            //TODO: Create some label that displays when no nearby businesses are found
+            print("There are no other businesses in the area or something went wrong.")
+        }
+        
+        self.navigationController?.pushViewController(otherLocationsVC, animated: true)
+    }
     
     
-//    func scrapeYelpPage(_ businessName: String) -> Void {
     func scrapeYelpPage(requestLink: String, completion: @escaping () -> Void ) {
         //var resultString: String
         Alamofire.request(requestLink).responseString { response in
@@ -199,20 +181,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 self.parseHTML(html) { () in
                     completion()
                 }
-//                    guard let resultString = result as? String else {return "errrrrrr"}
-//                    return resultString
-                
-                
             }
         }
-//        return "dkfsdkfhjsdfjhsdkfhks"
-        
-//        print(resultString)
-//        return resultString
     }
     
     func parseHTML(_ html: String, completionHandler: () -> Void) {
-//        if let doc = Kanna.HTML(html, encoding: String.Encoding.utf8) {
+
             let regex = try! NSRegularExpression(pattern: "\\/writeareview\\/biz\\/.+\\?return_url.+",
                                                  options: .caseInsensitive)
             guard let myMatch = regex.firstMatch(in: html, options: .withoutAnchoringBounds, range: NSRange(location: 0, length: html.characters.count))
@@ -222,60 +196,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                 }
             let tmp = (html as NSString).substring(with: myMatch.range)
             print("Match: \(tmp)")
-            //completion(tmp)
-//            return tmp
             self.yelpBusinessReviewLink = Constants.YelpHost + tmp
             completionHandler()
 
     }
     
 }
-    /* Example of Yelp search with more search options specified
-     Business.searchWithTerm("Restaurants", sort: .Distance, categories: ["asianfusion", "burgers"], deals: true) { (businesses: [Business]!, error: NSError!) -> Void in
-     self.businesses = businesses
-     
-     for business in businesses {
-     print(business.name!)
-     print(business.address!)
-     }
-     }
-     */
-    
-    //        Business.searchWithTerm(term: "", sort: .Distance, completion: { (businesses: [Business]?, error: Error?) -> Void in
-    //
-    //            self.businesses = businesses
-    //            if let businesses = businesses {
-    //                for business in businesses {
-    //                    print(business.name!)
-    //                    print(business.address!)
-    //                }
-    //            }
-    //
-    //        }
-    //        )
-    //    }
-    
-//    - (void)startSignificantChangeUpdates
-//
-//    {
-//    
-//    // Create the location manager if this object does not
-//    
-//    // already have one.
-//    
-//    if (nil == locationManager)
-//    
-//    locationManager = [[CLLocationManager alloc] init];
-//    
-//    
-//    
-//    locationManager.delegate = self;
-//    
-//    [locationManager startMonitoringSignificantLocationChanges];
-//    
-//    }
-    
-
-
-
-

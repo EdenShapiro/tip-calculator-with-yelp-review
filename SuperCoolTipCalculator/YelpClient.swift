@@ -10,9 +10,6 @@ import UIKit
 import AFNetworking
 import BDBOAuth1Manager
 
-//import AFNetworking
-
-
 enum YelpSortMode: Int {
     case bestMatched = 0, distance, highestRated
 }
@@ -22,8 +19,6 @@ class YelpClient: BDBOAuth1RequestOperationManager {
 
     var accessToken: String!
     var accessSecret: String!
-    
-    //MARK: Shared Instance
     
     static let sharedInstance = YelpClient(consumerKey: Constants.consumerKey, consumerSecret: Constants.consumerSecret, accessToken: Constants.token, accessSecret: Constants.tokenSecret)
     
@@ -41,8 +36,6 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         self.requestSerializer.saveAccessToken(token)
     }
     
-
-    //https://www.yelp.com/search?find_desc=&find_loc=Mountain+View%2C+CA&ns=1
     
     
     func searchWithTerm(_ term: String, completion: @escaping ([Business]?, Error?) -> Void) -> AFHTTPRequestOperation {
@@ -88,43 +81,3 @@ class YelpClient: BDBOAuth1RequestOperationManager {
         })!
     }
 }
-
-
-
-
-//#import "NSURLRequest+OAuth.h"
-//
-//#import <TDOAuth/TDOAuth.h>
-//
-///**
-// OAuth credential placeholders that must be filled by each user in regards to
-// http://www.yelp.com/developers/getting_started/api_access
-// */
-//#warning Fill in the API keys below with your developer v2 keys.
-//static NSString * const kConsumerKey       = @"";
-//static NSString * const kConsumerSecret    = @"";
-//static NSString * const kToken             = @"";
-//static NSString * const kTokenSecret       = @"";
-//
-//@implementation NSURLRequest (OAuth)
-//
-//+ (NSURLRequest *)requestWithHost:(NSString *)host path:(NSString *)path {
-//    return [self requestWithHost:host path:path params:nil];
-//    }
-//    
-//    + (NSURLRequest *)requestWithHost:(NSString *)host path:(NSString *)path params:(NSDictionary *)params {
-//        if ([kConsumerKey length] == 0 || [kConsumerSecret length] == 0 || [kToken length] == 0 || [kTokenSecret length] == 0) {
-//            NSLog(@"WARNING: Please enter your api v2 credentials before attempting any API request. You can do so in NSURLRequest+OAuth.m");
-//        }
-//        
-//        return [TDOAuth URLRequestForPath:path
-//            GETParameters:params
-//            scheme:@"https"
-//        host:host
-//        consumerKey:kConsumerKey
-//        consumerSecret:kConsumerSecret
-//        accessToken:kToken
-//        tokenSecret:kTokenSecret];
-//}
-//
-//@end

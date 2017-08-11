@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="dzX-B4-d6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="dzX-B4-d6f">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -102,6 +102,19 @@
                                     <action selector="leaveYelpReviewButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Lw5-wL-sKL"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IOV-dV-WJr" userLabel="Incorrect Location Button">
+                                <rect key="frame" x="133.5" y="622" width="108" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="CEB-PZ-ztA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <state key="normal" title="Not the right location?">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="incorrectLocationButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nsa-ki-d3P"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                         <gestureRecognizers/>
@@ -121,7 +134,9 @@
                             <constraint firstItem="uur-R4-Bzn" firstAttribute="top" secondItem="yZy-Bd-GQs" secondAttribute="bottom" constant="39" id="Kae-I9-sXY"/>
                             <constraint firstItem="QGp-cI-J4u" firstAttribute="leading" secondItem="naU-Fu-veN" secondAttribute="leading" id="Pct-uI-BgC"/>
                             <constraint firstItem="iay-0q-Gvq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Q3E-Ft-fyB"/>
+                            <constraint firstItem="uur-R4-Bzn" firstAttribute="top" secondItem="IOV-dV-WJr" secondAttribute="bottom" constant="15" id="b2A-Ti-CnX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GUL-lu-ftr" secondAttribute="trailing" id="cRt-a5-gpe"/>
+                            <constraint firstItem="IOV-dV-WJr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="clU-Wp-l8H"/>
                             <constraint firstAttribute="leadingMargin" secondItem="0BD-3W-YQt" secondAttribute="leading" id="erl-3o-Avy"/>
                             <constraint firstAttribute="leadingMargin" secondItem="E1x-IC-IL9" secondAttribute="leading" id="lfx-Hv-nVT"/>
                             <constraint firstAttribute="leadingMargin" secondItem="naU-Fu-veN" secondAttribute="leading" id="oOa-6e-Env"/>
@@ -146,6 +161,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billField" destination="GUL-lu-ftr" id="Lhh-XH-4ac"/>
+                        <outlet property="incorrectLocationButton" destination="IOV-dV-WJr" id="NFI-P1-zWl"/>
                         <outlet property="leaveYelpReviewButton" destination="yZy-Bd-GQs" id="EdP-QN-wxO"/>
                         <outlet property="tipControl" destination="iay-0q-Gvq" id="fjx-Hj-K2m"/>
                         <outlet property="tipLabel" destination="XbB-ox-OtO" id="a5e-Kg-oZm"/>
@@ -173,13 +189,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dF4-Ey-R8d">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dF4-Ey-R8d">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dF4-Ey-R8d" secondAttribute="trailing" id="1cB-Gx-92M"/>
+                            <constraint firstItem="dF4-Ey-R8d" firstAttribute="leading" secondItem="CoC-HD-PLI" secondAttribute="leading" id="AjX-fV-JZa"/>
+                            <constraint firstItem="dF4-Ey-R8d" firstAttribute="top" secondItem="CoC-HD-PLI" secondAttribute="top" id="UeK-tJ-Nbo"/>
+                            <constraint firstItem="dF4-Ey-R8d" firstAttribute="bottom" secondItem="S4w-sw-QgF" secondAttribute="top" id="sWu-TH-JGd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dbf-I1-w7s"/>
                     <connections>
@@ -189,6 +210,51 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r8U-kR-w4Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="672.5" y="967.5"/>
+        </scene>
+        <!--Other Businesses-->
+        <scene sceneID="ZaX-6k-cRW">
+            <objects>
+                <viewController storyboardIdentifier="OtherLocationsViewController" title="Other Businesses" id="8P3-Y8-ddg" customClass="OtherLocationsViewController" customModule="SuperCoolTipCalculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="EC8-EM-aNX"/>
+                        <viewControllerLayoutGuide type="bottom" id="8oE-DI-AGJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NQ0-wP-IfD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="4XH-dz-Acx">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OtherLocationsCell" id="Wjx-Zl-UK7">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Wjx-Zl-UK7" id="9gI-Bm-Gg3">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.062745098040000002" green="0.062745098040000002" blue="0.12549019610000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4XH-dz-Acx" firstAttribute="bottom" secondItem="8oE-DI-AGJ" secondAttribute="top" id="3Y8-FW-RYv"/>
+                            <constraint firstAttribute="trailing" secondItem="4XH-dz-Acx" secondAttribute="trailing" id="3sh-15-whL"/>
+                            <constraint firstItem="4XH-dz-Acx" firstAttribute="top" secondItem="NQ0-wP-IfD" secondAttribute="top" id="5Rp-m0-gzV"/>
+                            <constraint firstItem="4XH-dz-Acx" firstAttribute="leading" secondItem="NQ0-wP-IfD" secondAttribute="leading" id="Khh-ip-KAU"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="4XH-dz-Acx" id="I9V-ex-A9J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fs7-Rg-LYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1107" y="968"/>
         </scene>
         <!--Settings-->
         <scene sceneID="M9c-sM-g6Z">

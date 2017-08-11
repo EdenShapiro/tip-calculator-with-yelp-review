@@ -12,6 +12,7 @@
 		E0823745E71DC5A4AC914CEE /* Pods_SuperCoolTipCalculator.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020D4826C633F67FECBA3485 /* Pods_SuperCoolTipCalculator.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		F223E2091E73594300292362 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F223E2081E73594300292362 /* AFNetworking.framework */; };
 		F224A58C1E85ACBE00873128 /* YelpReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */; };
+		F24D649E1F3E2DEF00BC6217 /* OtherLocationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F24D649D1F3E2DEF00BC6217 /* OtherLocationsViewController.swift */; };
 		F25A55A31E6E2FEC004F3574 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25A55A21E6E2FEC004F3574 /* YelpClient.swift */; };
 		F2605BD51E82FDDF007F068C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2605BD41E82FDDF007F068C /* Business.swift */; };
 		F2AB95FD1E447F93002276E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2AB95FC1E447F93002276E7 /* AppDelegate.swift */; };
@@ -56,6 +57,7 @@
 		F223E2081E73594300292362 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = "Pods/../build/Debug-iphoneos/AFNetworking/AFNetworking.framework"; sourceTree = "<group>"; };
 		F223E20D1E736FEE00292362 /* AFOAuth1Client.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFOAuth1Client.framework; path = "../../Library/Developer/Xcode/DerivedData/SuperCoolTipCalculator-efxprlazuumxvwbzwokgzqzqfdfw/Build/Products/Debug-iphonesimulator/AFOAuth1Client/AFOAuth1Client.framework"; sourceTree = "<group>"; };
 		F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpReviewViewController.swift; sourceTree = "<group>"; };
+		F24D649D1F3E2DEF00BC6217 /* OtherLocationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OtherLocationsViewController.swift; sourceTree = "<group>"; };
 		F25A55A21E6E2FEC004F3574 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		F2605BD41E82FDDF007F068C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		F2AB95F91E447F93002276E7 /* SuperCoolTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCoolTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -184,6 +186,7 @@
 				F2AB95FC1E447F93002276E7 /* AppDelegate.swift */,
 				F2605BD41E82FDDF007F068C /* Business.swift */,
 				F2AB95FE1E447F93002276E7 /* ViewController.swift */,
+				F24D649D1F3E2DEF00BC6217 /* OtherLocationsViewController.swift */,
 				F2B56FE01E8ADDEF005B6756 /* Constants.swift */,
 				F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */,
 				F2AB96001E447F93002276E7 /* Main.storyboard */,
@@ -565,6 +568,7 @@
 			files = (
 				F25A55A31E6E2FEC004F3574 /* YelpClient.swift in Sources */,
 				F2AB95FF1E447F93002276E7 /* ViewController.swift in Sources */,
+				F24D649E1F3E2DEF00BC6217 /* OtherLocationsViewController.swift in Sources */,
 				F224A58C1E85ACBE00873128 /* YelpReviewViewController.swift in Sources */,
 				F2AB95FD1E447F93002276E7 /* AppDelegate.swift in Sources */,
 				F2B56FE11E8ADDEF005B6756 /* Constants.swift in Sources */,
