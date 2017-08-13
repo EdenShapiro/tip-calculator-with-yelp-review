@@ -158,6 +158,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		F24D649F1F3E4CE500BC6217 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F25A55A21E6E2FEC004F3574 /* YelpClient.swift */,
+				F2605BD41E82FDDF007F068C /* Business.swift */,
+				F2B56FE01E8ADDEF005B6756 /* Constants.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		F24D64A01F3E4CFF00BC6217 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F2AB95FE1E447F93002276E7 /* ViewController.swift */,
+				F2AB962A1E455126002276E7 /* SettingsViewController.swift */,
+				F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */,
+				F24D649D1F3E2DEF00BC6217 /* OtherLocationsViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		F2AB95F01E447F93002276E7 = {
 			isa = PBXGroup;
 			children = (
@@ -184,15 +205,10 @@
 			isa = PBXGroup;
 			children = (
 				F2AB95FC1E447F93002276E7 /* AppDelegate.swift */,
-				F2605BD41E82FDDF007F068C /* Business.swift */,
-				F2AB95FE1E447F93002276E7 /* ViewController.swift */,
-				F24D649D1F3E2DEF00BC6217 /* OtherLocationsViewController.swift */,
-				F2B56FE01E8ADDEF005B6756 /* Constants.swift */,
-				F224A58B1E85ACBE00873128 /* YelpReviewViewController.swift */,
-				F2AB96001E447F93002276E7 /* Main.storyboard */,
-				F25A55A21E6E2FEC004F3574 /* YelpClient.swift */,
-				F2AB962A1E455126002276E7 /* SettingsViewController.swift */,
+				F24D649F1F3E4CE500BC6217 /* Model */,
+				F24D64A01F3E4CFF00BC6217 /* ViewControllers */,
 				F2AB96031E447F93002276E7 /* Assets.xcassets */,
+				F2AB96001E447F93002276E7 /* Main.storyboard */,
 				F2AB96051E447F93002276E7 /* LaunchScreen.storyboard */,
 				F2AB96081E447F93002276E7 /* Info.plist */,
 			);
