@@ -125,7 +125,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     // Updated location callback
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         userLocation = locations[0] as CLLocation
-        print("didUpdateLocations callllled")
+        print("didUpdateLocations called")
         // TODO: Call stopUpdatingLocation() to stop listening for location updates,
         // other wise this function will be called every time when user location changes.
         // manager.stopUpdatingLocation()

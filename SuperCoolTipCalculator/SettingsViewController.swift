@@ -36,9 +36,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         picker3.dataSource = self
         picker3.delegate = self
         picker3.tag = 3
-//        print(tipPercentages[0])
-//        print(tipPercentages[0]*100)
-//        print(Int(tipPercentages[0]*100))
         picker1.selectRow(Int(tipPercentages[0]*100)-1, inComponent: 0, animated: true)
         picker2.selectRow(Int(tipPercentages[1]*100)-1, inComponent: 0, animated: true)
         picker3.selectRow(Int(tipPercentages[2]*100)-1, inComponent: 0, animated: true)
@@ -59,8 +56,6 @@ class SettingsViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        print(pickerData[row])
-//        print(pickerData[row]/100)
         tipPercentages[pickerView.tag - 1] = Double(pickerData[row])/100.0
         defaults.set(tipPercentages, forKey: "tipPercentages")
         defaults.synchronize()
