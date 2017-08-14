@@ -32,7 +32,7 @@ Basic functionality (enter bill amount, choose tip percentage, see tip and total
 <img src='http://i.imgur.com/xSYbUk0.gif' title='Basic functionality' width='' alt='Basic functionality' />
 
 Yelp functionality (click on the leave-a-review button to leave review of current establishment, if incorrect business, view other nearby businesses)  
-<img src='http://i.imgur.com/D0Bpvsz.gif' title='Yelp functionality' width='' alt='Yelp functionality' />
+<img src='http://i.imgur.com/D0Bpvsz.gif' title='Yelp functionality' width='' alt='Yelp functionality' />   
 Alternative location:  
 <img src='http://i.imgur.com/jXo3xIR.gif' title='Alternative location' width='' alt='Alternative location' />
 
@@ -49,7 +49,7 @@ As part of your pre-work submission, please reflect on the app and answer the fo
 
 **Answer:** I've really enjoyed using Xcode and the iOS development platform. The interface is clean and user-friendly, the documentation is very organized and understandable, the simulator runs quickly and smoothly, and Apple's optional frameworks (CoreLocation, etc.) are easy to implement. Overall it's been a very positive experience.   
 
-    A simple explanation of actions and outlets might be that outlets, in code, are a representation of a UIElement and are properties of the view controller that they’re in. They in turn have attributes that can be changed, and those changes are reflected in the UI as we use the app. Actions, in code, are a representation of a physical action that a user takes (like clicking a button or pinching two fingers together). They are always connected with a method in the view controller and can be triggerd by different user actions. My guess as to how both work is that the UI element is issued an ID in storyboard that is then specifically matched with a code property within the viewcontroller by that same ID. There seem to be some additional components, like "destination", "selector", and "eventType", which appear to signal where changes should take place, which methods should be trigger, and by what specific user action, respectively.
+A simple explanation of actions and outlets might be that outlets, in code, are a representation of a UIElement and are properties of the view controller that they’re in. They in turn have attributes that can be changed, and those changes are reflected in the UI as we use the app. Actions, in code, are a representation of a physical action that a user takes (like clicking a button or pinching two fingers together). They are always connected with a method in the view controller and can be triggerd by different user actions. My guess as to how both work is that the UI element is issued an ID in storyboard that is then specifically matched with a code property within the viewcontroller by that same ID. There seem to be some additional components, like "destination", "selector", and "eventType", which appear to signal where changes should take place, which methods should be trigger, and by what specific user action, respectively.
 
 **Question 2**: "Swift uses [Automatic Reference Counting](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/AutomaticReferenceCounting.html#//apple_ref/doc/uid/TP40014097-CH20-ID49) (ARC), which is not a garbage collector, to manage memory. Can you explain how you can get a strong reference cycle for closures? (There's a section explaining this concept in the link, how would you summarize as simply as possible?)"
 
