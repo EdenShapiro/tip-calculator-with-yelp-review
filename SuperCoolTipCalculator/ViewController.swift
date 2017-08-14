@@ -90,7 +90,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             self.billField.text = billField
             calculateTip(billField as AnyObject)
         } else {
-            self.billField.placeholder = "\(formatter.currencySymbol)0"
+            self.billField.text = "\(formatter.currencySymbol!)0.00"
         }
         
         // Determine current user location
