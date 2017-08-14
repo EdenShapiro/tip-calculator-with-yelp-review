@@ -19,16 +19,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var leaveYelpReviewButton: UIButton!
     @IBOutlet weak var incorrectLocationButton: UIButton!
-    let defaults = UserDefaults.standard
-    let formatter = NumberFormatter()
-    var tipPercentages: [Double]!
-    var defaultSegment: Int!
     var locationManager: CLLocationManager!
-    var businesses: [Business]?
     var userLocation: CLLocation?
     var currentBusiness: Business?
+    var tipPercentages: [Double]!
+    var defaultSegment: Int!
+    var businesses: [Business]?
     var yelpBusinessReviewLink: String?
-    
+    let defaults = UserDefaults.standard
+    let formatter = NumberFormatter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,7 +90,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             self.billField.text = billField
             calculateTip(billField as AnyObject)
         } else {
-            self.billField.placeholder = formatter.currencySymbol
+            self.billField.placeholder = "\(formatter.currencySymbol)0"
         }
         
         // Determine current user location
@@ -173,12 +172,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         print(billField.text ?? "help")
         let text = billField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
         
-        print("text after calTip formatting: \(text)")
         let double = Double(text!) ?? 0
-        print("number: \(double)")
-        print("number/100: \(double/100.0)")
         let bill = Double(double/100.0)
-        print(bill)
         
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
