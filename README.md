@@ -39,6 +39,9 @@ Alternative location:
 Persistence functionality (using UserDefaults)  
 <img src='http://i.imgur.com/kSmINg3.gif' title='Persistence functionality' width='' alt='Persistence functionality' />
 
+Locale-specific functionality  
+<img src='http://i.imgur.com/YPl9xMW.gif' title='Locale-specific functionality' width='' alt='Locale-specific functionality' />
+
 GIFs created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Project Analysis
