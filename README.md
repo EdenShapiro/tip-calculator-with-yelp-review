@@ -29,12 +29,12 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 Basic functionality (enter bill amount, choose tip percentage, see tip and total values, adjust tip percentage on settings page):  
-<img src='http://i.imgur.com/xSYbUk0.gif' title='Basic functionality' width='' alt='Basic functionality' />
+<img src='http://i.imgur.com/56iImfY.gif' title='Basic functionality' width='' alt='Basic functionality' />
 
 Yelp functionality (click on the leave-a-review button to leave review of current establishment, if incorrect business, view other nearby businesses)  
-<img src='http://i.imgur.com/D0Bpvsz.gif' title='Yelp functionality' width='' alt='Yelp functionality' />   
-Alternative location:  
-<img src='http://i.imgur.com/jXo3xIR.gif' title='Alternative location' width='' alt='Alternative location' />
+<img src='http://i.imgur.com/ChXiWB7.gif' title='Yelp functionality' width='' alt='Yelp functionality' />   
+Different locations testing   
+<img src='http://i.imgur.com/um7uw6D.gif' title='Location functionality testing' width='' alt='Location functionality testing' />  
 
 Persistence functionality (using UserDefaults)  
 <img src='http://i.imgur.com/kSmINg3.gif' title='Persistence functionality' width='' alt='Persistence functionality' />
