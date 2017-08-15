@@ -19,6 +19,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     @IBOutlet weak var tipControl: UISegmentedControl!
     @IBOutlet weak var leaveYelpReviewButton: UIButton!
     @IBOutlet weak var incorrectLocationButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var locationManager: CLLocationManager!
     var userLocation: CLLocation?
     var currentBusiness: Business?
@@ -33,6 +34,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         super.viewDidLoad()
         setUpFormatterAndBillField()
         checkDefaultsForValue()
+        activityIndicator.isHidden = true
         billField.addTarget(self, action: #selector(textFieldChanged(textField:)), for: .editingChanged)
         billField.addTarget(self, action: #selector(calculateTip), for: .editingChanged)
         billField.addTarget(self, action: #selector(textFieldChanged(textField:)), for: .valueChanged)
@@ -181,8 +183,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     
     // Called when segmentedcontrol value changes or when bill textfield changed
     func calculateTip() {
-//        print(" ")
-//        print(billField.text ?? "help")
         let text = billField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
         
         let double = Double(text!) ?? 0
@@ -207,17 +207,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     }
     
     func textFieldChanged(textField: UITextField) {
-//        let text = textField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
         let text = textField.text?.stringOfNumbersOnly
         print("cleaned up text: \(text)")
         textField.text = formatter.string(from: NSNumber(value: (Double(text!) ?? 0)/100.0))
         print("newly reformated text: \(textField.text)")
-       
-
+    
     }
     
     @IBAction func leaveYelpReviewButtonClicked(_ sender: Any) {
-        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
         let currentBusinessLink = Constants.YelpHost + Constants.YelpBizPath + "/" + self.currentBusiness!.id!
         print(currentBusinessLink)
         scrapeYelpPage(requestLink: currentBusinessLink) { () in
@@ -227,6 +226,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             self.yelpBusinessReviewLink!.remove(at: self.yelpBusinessReviewLink!.index(before: self.yelpBusinessReviewLink!.endIndex))
             yelpReviewViewController.yelpBusinessString = self.yelpBusinessReviewLink!
             self.navigationController?.pushViewController(yelpReviewViewController, animated: true)
+            self.activityIndicator.stopAnimating()
         }
     }
     
@@ -247,7 +247,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     
     
     func scrapeYelpPage(requestLink: String, completion: @escaping () -> Void ) {
-        //var resultString: String
         Alamofire.request(requestLink).responseString { response in
             print("\(response.result.isSuccess)")
             if let html = response.result.value {

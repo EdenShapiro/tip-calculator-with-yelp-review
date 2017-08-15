@@ -12,11 +12,13 @@ import UIKit
 
 class YelpReviewViewController: UIViewController, UIWebViewDelegate, UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var webView: UIWebView!
     var yelpBusinessString: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         
         // Set up webview
         webView.delegate = self
@@ -29,4 +31,9 @@ class YelpReviewViewController: UIViewController, UIWebViewDelegate, UIGestureRe
         webView.reload()
         
     }
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        activityIndicator.stopAnimating()
+    }
+
 }

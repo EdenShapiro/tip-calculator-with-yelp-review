@@ -10,6 +10,7 @@ import UIKit
 
 class OtherLocationsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
     var otherBusinessesArray: [Business]!
     var parentVC: ViewController!
@@ -52,7 +53,7 @@ class OtherLocationsViewController: UIViewController, UITableViewDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        activityIndicator.startAnimating()
         let selectedBusiness = otherBusinessesArray[indexPath.row]
         let currentBusinessLink = Constants.YelpHost + Constants.YelpBizPath + "/" + selectedBusiness.id!
         print(currentBusinessLink)
@@ -64,6 +65,7 @@ class OtherLocationsViewController: UIViewController, UITableViewDelegate, UITab
             yelpReviewViewController.yelpBusinessString = self.parentVC.yelpBusinessReviewLink!
             self.parentVC.setLeaveYelpReviewButton(business: selectedBusiness)
             self.navigationController?.pushViewController(yelpReviewViewController, animated: true)
+            self.activityIndicator.stopAnimating()
         }
     }
 
