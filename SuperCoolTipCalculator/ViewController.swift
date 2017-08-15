@@ -33,6 +33,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         super.viewDidLoad()
         setUpFormatterAndBillField()
         checkDefaultsForValue()
+        billField.addTarget(self, action: #selector(textFieldChanged(textField:)), for: .editingChanged)
+        billField.addTarget(self, action: #selector(calculateTip), for: .editingChanged)
+        billField.addTarget(self, action: #selector(textFieldChanged(textField:)), for: .valueChanged)
+        tipControl.addTarget(self, action: #selector(calculateTip), for: .valueChanged)
     }
     
     func setUpFormatterAndBillField(){
@@ -63,21 +67,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     override func viewWillAppear(_ animated: Bool) {
         
         // Set up segmentedcontrol
-        if let defaultsArray = defaults.array(forKey: "tipPercentages"){
-            tipPercentages = defaultsArray as! [Double]
-            print("app has run before")
-        } else {
-            tipPercentages = [0.15, 0.20, 0.25]
-            defaults.set(tipPercentages, forKey: "tipPercentages")
-            print("first app run ever")
-        }
-        let segment1 = String(Int(tipPercentages[0]*100)) + "%"
-        let segment2 = String(Int(tipPercentages[1]*100)) + "%"
-        let segment3 = String(Int(tipPercentages[2]*100)) + "%"
-        tipControl.setTitle(segment1, forSegmentAt: 0)
-        tipControl.setTitle(segment2, forSegmentAt: 1)
-        tipControl.setTitle(segment3, forSegmentAt: 2)
+        setUpSegmentedControl()
         
+        
+        // Persist selected segment
         if let segment = defaults.value(forKey: "defaultSegment"){
             defaultSegment = segment as! Int
         } else {
@@ -85,13 +78,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         }
         tipControl.selectedSegmentIndex = defaultSegment
         
+        
         // Check billField for prior value
         if let billField = defaults.string(forKey: "billField"){
             self.billField.text = billField
-            calculateTip(billField as AnyObject)
+            textFieldChanged(textField: self.billField)
         } else {
-            self.billField.text = "\(formatter.currencySymbol!)0.00"
+            self.billField.text = formatter.currencySymbol!
         }
+        calculateTip()
+        
         
         // Determine current user location
         determineMyCurrentLocation()
@@ -106,8 +102,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
             defaults.set(billField, forKey: "billField")
         }
         defaults.synchronize()
+        billField.resignFirstResponder()
     }
 
+    func setUpSegmentedControl(){
+        if let defaultsArray = defaults.array(forKey: "tipPercentages"){
+            tipPercentages = defaultsArray as! [Double]
+            print("app has run before")
+        } else {
+            tipPercentages = [0.15, 0.20, 0.25]
+            defaults.set(tipPercentages, forKey: "tipPercentages")
+            print("first app run ever")
+        }
+        let segment1 = String(Int(tipPercentages[0]*100)) + "%"
+        let segment2 = String(Int(tipPercentages[1]*100)) + "%"
+        let segment3 = String(Int(tipPercentages[2]*100)) + "%"
+        tipControl.setTitle(segment1, forSegmentAt: 0)
+        tipControl.setTitle(segment2, forSegmentAt: 1)
+        tipControl.setTitle(segment3, forSegmentAt: 2)
+    }
 
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
@@ -167,9 +180,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
     }
     
     // Called when segmentedcontrol value changes or when bill textfield changed
-    @IBAction func calculateTip(_ sender: AnyObject) {
-        print(" ")
-        print(billField.text ?? "help")
+    func calculateTip() {
+//        print(" ")
+//        print(billField.text ?? "help")
         let text = billField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
         
         let double = Double(text!) ?? 0
@@ -193,9 +206,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
         //        })
     }
     
-    @IBAction func textFieldChanged(_ sender: Any) {
-        let textField = sender as! UITextField
-        let text = textField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
+    func textFieldChanged(textField: UITextField) {
+//        let text = textField.text?.replacingOccurrences(of: formatter.currencySymbol, with: "").replacingOccurrences(of: formatter.groupingSeparator, with: "").replacingOccurrences(of: formatter.decimalSeparator, with: "")
+        let text = textField.text?.stringOfNumbersOnly
         print("cleaned up text: \(text)")
         textField.text = formatter.string(from: NSNumber(value: (Double(text!) ?? 0)/100.0))
         print("newly reformated text: \(textField.text)")
@@ -261,4 +274,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDe
 
     }
     
+}
+
+extension String {
+    
+    var stringOfNumbersOnly: String {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted)
+            .joined()
+    }
 }
